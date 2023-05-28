@@ -1,6 +1,6 @@
 # 專案名稱
 
-這是一個使用 React、React Router、Vite、Tailwind CSS、TypeScript 和 Material-UI 的專案。它旨在提供一個練習 React 的平台，並擁有多個頁面。
+這是一個使用 React、React Router、Vite、Tailwind CSS、TypeScript 和 Material-UI 的專案。它旨在作為作者一個練習 React 的平台，並擁有多個頁面。
 
 ## 功能描述
 
@@ -17,8 +17,6 @@
 - Tailwind CSS
 - TypeScript
 - Material-UI
-
-（在這裡列出你專案所使用的技術和工具）
 
 ## 開始使用
 

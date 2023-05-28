@@ -7,6 +7,7 @@ import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Snackbar from '@mui/material/Snackbar'
+import ButtonGroup from '@mui/material/ButtonGroup'
 
 function LineDevelop() {
   const [form, setForm] = useState({
@@ -16,28 +17,32 @@ function LineDevelop() {
     lineId: '5db13bab',
     gameId: '186ed69250cbKD',
   })
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   const result = useMemo(
     () =>
       `${form.liffUrl}?liffId=${form.liffUrl.split('/')[3]}&gameId=${
         form.gameId
-      }&lineBasicId=${form.lineBasicId}&lineId=${form.lineId}`,undefined
+      }&lineBasicId=${form.lineBasicId}&lineId=${form.lineId}`,
+    []
   )
-  const handleCopy=()=>{
-    navigator.clipboard.writeText(result);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(result)
     setOpen(true)
   }
-  const handleClose = ()=>setOpen(false)
+  const handleClose = () => setOpen(false)
   return (
-    <div >
+    <div>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
           copy success !
         </Alert>
       </Snackbar>
-      <Card className="m-auto" sx={{ minWidth: 400,maxWidth:800 }}>
+      <Card className="m-auto" sx={{ minWidth: 400, maxWidth: 800 }}>
         <CardContent>
           <Grid container spacing={1}>
+            <Grid item xs={12}>
+              <Alert severity="info">Accunix 遊戲client端測試網址生成</Alert>
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 value={form.liffUrl}
@@ -85,12 +90,56 @@ function LineDevelop() {
             <Grid item xs={12}>
               <Alert severity="success">{result}</Alert>
             </Grid>
+            <Grid item xs={12}></Grid>
           </Grid>
         </CardContent>
         <CardActions>
           <Button className="w-full" variant="outlined" onClick={handleCopy}>
-            Copy
+            Copy Url
           </Button>
+        </CardActions>
+        <CardActions className="justify-center">
+          <ButtonGroup
+            variant="contained"
+            aria-label="outlined primary button group"
+          >
+            <Button
+              className="w-full"
+              variant="outlined"
+              onClick={() =>
+                window.open(
+                  'https://developers.line.biz/console/channel/1653785141/liff/',
+                  'test'
+                )
+              }
+            >
+              Line Develop-開發
+            </Button>
+            <Button
+              className="w-full"
+              variant="outlined"
+              onClick={() =>
+                window.open(
+                  'https://developers.line.biz/console/channel/1654066743',
+                  'test'
+                )
+              }
+            >
+              Line Develop-測試
+            </Button>
+            <Button
+              className="w-full"
+              variant="outlined"
+              onClick={() =>
+                window.open(
+                  'https://developers.line.biz/console/channel/1653895455',
+                  'test'
+                )
+              }
+            >
+              Line Develop-正式
+            </Button>
+          </ButtonGroup>
         </CardActions>
       </Card>
     </div>
