@@ -23,7 +23,7 @@ function LineDevelop() {
       `${form.liffUrl}?liffId=${form.liffUrl.split('/')[3]}&gameId=${
         form.gameId
       }&lineBasicId=${form.lineBasicId}&lineId=${form.lineId}`,
-    []
+    undefined
   )
   const handleCopy = () => {
     navigator.clipboard.writeText(result)
