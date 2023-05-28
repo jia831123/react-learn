@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import './App.css'
 import { Routes, Route} from 'react-router-dom'
 import LineDevelop from './views/LineDevelop'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className='App'>

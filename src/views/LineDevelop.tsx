@@ -8,7 +8,7 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Snackbar from '@mui/material/Snackbar'
 
-function LineDevelop(props) {
+function LineDevelop() {
   const [form, setForm] = useState({
     liffUrl: 'https://liff.line.me/1654066743-XqROyByj',
     liffId: '1654066743-XqROyByj',
@@ -21,7 +21,7 @@ function LineDevelop(props) {
     () =>
       `${form.liffUrl}?liffId=${form.liffUrl.split('/')[3]}&gameId=${
         form.gameId
-      }&lineBasicId=${form.lineBasicId}&lineId=${form.lineId}`
+      }&lineBasicId=${form.lineBasicId}&lineId=${form.lineId}`,undefined
   )
   const handleCopy=()=>{
     navigator.clipboard.writeText(result);
